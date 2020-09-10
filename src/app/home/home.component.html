@@ -1,0 +1,44 @@
+<div class="outer_container">
+
+  <div class="big_container">
+    <div class="top_bar">
+      <span>Selecionar Mesa</span>
+    </div>
+    <div class="transparent_bg">
+      <div class="container">
+        <div class="search_pane"> 
+          <div class="search_box">
+            <select [(ngModel)]="selectedMesa">
+              <option value="" disabled selected>MESA</option>
+              <option *ngFor ="let result of todasMesas;let i=index;" value={{result.mesa}}>{{result.mesa}}</option>
+            </select>
+          </div>
+          <div class="search_box">
+            <button (click)="query()">Go</button>
+          </div>
+        </div>
+        <div class="flight_pane">
+          <div class="flight_headers">
+            <div class="flight_number cell"> Pedido # </div>
+            <div class="departs cell"> Produtos </div>
+            <div class="arrives cell"> Valor Un. </div>
+            <div class="arrives cell"> Quantidade </div>
+            <div class="arrives cell"> Valor total </div>
+          </div>
+          <div *ngFor="let pedido of pedidos;" class="flight_results">
+            <div class="flight_number cell"> {{pedido.id}}</div>
+            <div class="departs cell"> {{pedido.produto}}</div>
+            <div class="arrives cell"> {{pedido.precoun|currency}} </div>
+            <div class="arrives cell">{{pedido.quantidade}}</div>
+            <div class="arrives cell">{{pedido.precototal|currency}}</div>
+          </div>
+        </div>
+      </div>
+      <div class="fechamento">
+      <button (click)="fecharMesa()">Fechar Mesa</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+

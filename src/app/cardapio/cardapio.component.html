@@ -1,0 +1,31 @@
+<div class="admin_panel">
+  <div class="top_bar">
+    <h2>Novo Produto</h2>
+  </div>
+  <input type="text" [(ngModel)]="nomeProduto" placeholder="Nome do Produto">
+  <input type="number" [(ngModel)]="precoUn" placeholder="Preço (R$)">
+  <input type="number" [(ngModel)]="codProd" placeholder="Código">
+  <button (click)="InserirProduto()">Adicionar</button>
+</div>
+<div class="admin_panel">
+  <div class="top_bar">
+    <h2>Lista de Produtos</h2>
+  </div>
+  <div class="transparent_bg">
+    <div class="flight_pane">
+      <div class="flight_headers">
+        <div class="flight_number cell"> CodProd</div>
+        <div class="departs cell"> Produto </div>
+        <div class="arrives cell"> Valor Un. </div>
+      </div>
+      <div *ngFor="let prod of precos;" class="flight_results">
+        <div class="flight_number cell"> {{prod.codprod}}</div>
+        <div class="departs cell"> {{prod.produto}}</div>
+        <div class="arrives cell"> {{prod.precoun|currency}} </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

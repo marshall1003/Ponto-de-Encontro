@@ -1,0 +1,50 @@
+/* You can add global styles to this file, and also import other style files */
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    // background: url("assets/mountains.jpeg");
+    //background: url("https://tsflights-images.firebaseapp.com/mountains.jpeg"); 
+ 
+    //background-repeat: no-repeat;
+    //background-size: cover;
+    background-color: #A5EFFE;
+    
+}
+
+header {
+  width: 100vw;
+  height: 50px;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  .link_box {
+    height: 35px;
+    margin: 6px 4px;
+    align-self: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    button {
+      border-radius: 9px;
+      border-radius: 20%;
+      width: 150px;
+      height: 40px;
+      background-color: lightsalmon;
+      text-align: center;
+      font-weight: bold;
+      margin-right: 5px;
+
+      @media screen and (max-width: 600px) {
+        width: 80px;
+        font-size: small;
+      }
+    }
+  }
+}
